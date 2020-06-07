@@ -75,6 +75,18 @@ class Play extends Phaser.Scene {
             this.gameOver = true;
         
         }, null, this);
+
+        {
+            //display clock
+        
+            console.log('create');
+            this.initialTime = game.settings.gameTimer/1000;
+        
+            text = this.add.text(32, 32, 'Time: ' + formatTime(this.initialTime));
+        
+            timedEvent = this.time.addEvent({ delay: 1000, callback: onEvent, callbackScope: this, loop: true});
+        }
+        
   
     }
 
