@@ -32,7 +32,7 @@ class Play extends Phaser.Scene {
         this.ship01 = new Spaceship(this, game.config.width + 192, 132, 'spaceship', 0, 30).setOrigin(0,0);
         this.ship02 = new Spaceship(this, game.config.width + 96, 196, 'spaceship', 0, 20).setOrigin(0,0);
         this.ship03 = new Spaceship(this, game.config.width, 260, 'spaceship', 0, 10).setOrigin(0,0);
-        this.ship04 = new Spaceship(this, game.config.width, 10, 'spaceship', 10, 15).setOrigin(0,0);
+        this.ship04 = new Spaceship(this, game.config.width, 85, 'spaceship', 10, 5).setOrigin(0,0);
 
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -56,7 +56,7 @@ class Play extends Phaser.Scene {
             color: '#843605',
             align: 'right',
             padding: {
-                top: 5,
+                top: 1,
                 bottom: 5,
             },
             fixedWidth: 100
