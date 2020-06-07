@@ -91,22 +91,11 @@ class Play extends Phaser.Scene {
        
             // game over flag
         this.gameOver = false;
-       
-        let currentTime = game.settings.gameTimer/1000;
-        scoreConfig.align = 'center';
-        this.timeDisplay = this.add.text(270, 54, currentTime, scoreConfig);
-        let timedEvent = this.time.addEvent({ 
-            delay: 1000, 
-            callback: function() {
-                currentTime -= 1;
-                this.timeDisplay.text = currentTime;
-            }, 
-            callbackScope: this, 
-            repeat: game.settings.gameTimer/1000 - 1 
-        });
+
         //  play clock
         scoreConfig.fixedWidth = 0;
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
+            BGM.stop();
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)ire to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
