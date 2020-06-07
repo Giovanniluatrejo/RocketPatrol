@@ -9,7 +9,11 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx_select' , './assets/Hit3.wav');
         this.load.audio('sfx_explosion' , './assets/Hit2.wav');
         this.load.audio('sfx_rocket' , './assets/Hit.wav');
+        this.load.audio('BGM', ' ./assets/BGM.wav');
+        //title
         this.load.image('title', './assets/title.png')
+
+        
        
     }
 
@@ -22,6 +26,18 @@ class Menu extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
        
+    }
+
+    create() {
+        //background music
+        let BGM = this.sound.add('BGM');
+
+        BGM.play({
+            volume: .1,
+            loop: true
+        })
+
+        
     }
 
     update() {
