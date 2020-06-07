@@ -18,6 +18,7 @@ let config = {
 game.settings = {
     spaceshipSpeed: 3,
     gameTimer: 60000,
+    highScore: 0
   
 }
 

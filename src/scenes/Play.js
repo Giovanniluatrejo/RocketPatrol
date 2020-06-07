@@ -64,7 +64,24 @@ class Play extends Phaser.Scene {
         }
         this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
 
-        // game over flag
+        // high score
+        let highScoreConfig = {
+            fontFamily: 'Times New Roman',
+            fontSize: '28px',
+            backgroundColor: '#41f3ea',
+            color: '#843605',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100
+        }
+        this.scoreRight = this.add.text(475,46, game.settings.highScore, scoreConfig);
+       
+       
+       
+            // game over flag
         this.gameOver = false;
 
         //  play clock
@@ -143,7 +160,12 @@ class Play extends Phaser.Scene {
         });
         // score increment and repaint
         this.p1Score += ship.points;
-        this.scoreLeft.text = this.p1Score;     
+        this.scoreLeft.text = this.p1Score;  
+        //highscore
+        if (this.p1Score >= game.settings.highScore){
+            game.settings.highScore = this.p1Score;
+            this.scoreRight.text = game.settings.highScore;
+        }
         // play sound
         this.sound.play('sfx_explosion');  
     }
