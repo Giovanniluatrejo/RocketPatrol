@@ -18,10 +18,10 @@ class Play extends Phaser.Scene {
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'Outdoors').setOrigin(0, 0);
 
         // shows the white rectangle borders
-        this.add.circle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0, 0);
-        this.add.circle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0, 0);
-        this.add.circle(5, 5, 32, 455, 0xFFFFFF).setOrigin(0, 0);
-        this.add.circle(603, 5, 32, 455, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(603, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
         // puts in green UI background
         this.add.rectangle(37, 42, 566, 64, 0x00FF00).setOrigin(0, 0);
 
