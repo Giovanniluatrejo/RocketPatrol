@@ -18,9 +18,9 @@ class Play extends Phaser.Scene {
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'Outdoors').setOrigin(0, 0);
 
         // shows the white rectangle borders
-        this.add.circle(5, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
-        this.add.circle(5, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
-        this.add.circle(5, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 65, 25, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 54, 15, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 50, 5, 5, 0xFFFFFF).setOrigin(0, 0);
         this.add.circle(603, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
         // puts in green UI background
        
@@ -32,6 +32,7 @@ class Play extends Phaser.Scene {
         this.ship01 = new Spaceship(this, game.config.width + 192, 132, 'spaceship', 0, 30).setOrigin(0,0);
         this.ship02 = new Spaceship(this, game.config.width + 96, 196, 'spaceship', 0, 20).setOrigin(0,0);
         this.ship03 = new Spaceship(this, game.config.width, 260, 'spaceship', 0, 10).setOrigin(0,0);
+        this.ship04 = new Spaceship(this, game.config.width, 10, 'spaceship', 0, 5).setOrigin(0,0);
 
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -49,9 +50,9 @@ class Play extends Phaser.Scene {
         this.p1Score = 0;
         // score display
         let scoreConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Times New Roman',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
+            backgroundColor: '#41f3ea',
             color: '#843605',
             align: 'right',
             padding: {
@@ -98,11 +99,17 @@ class Play extends Phaser.Scene {
         this.starfield.tilePositionX -= 4;  // scroll tile sprite
         if (!this.gameOver) {               
             this.p1Rocket.update();         // update rocket sprite
-            this.ship01.update();           // update spaceships (x3)
+            this.ship01.update();           // update spaceships (x4)
             this.ship02.update();
             this.ship03.update();
+            this.ship04.update();
         }             
         // check collisions
+        if(this.checkCollision(this.p1Rocket, this.ship04)) {
+            this.p1Rocket.reset();
+            this.shipExplode(this.ship04);
+        }
+        
         if(this.checkCollision(this.p1Rocket, this.ship03)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship03);   
