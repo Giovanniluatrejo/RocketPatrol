@@ -57,7 +57,7 @@ class Play extends Phaser.Scene {
             color: '#843605',
             align: 'right',
             padding: {
-                top: 1,
+                top: 5,
                 bottom: 5,
             },
             fixedWidth: 100
@@ -73,16 +73,6 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)ire to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
-        
-        
-        //update highscore
-        this.pHigh = Math.max(this.p1Score, this.p2Score);
-
-        if(highScore < this.pHigh)
-            highScore = this.pHigh;
-
-        this.highScoreDisplay.text = "High Score: " + highScore;
-        
         
         }, null, this);
   
