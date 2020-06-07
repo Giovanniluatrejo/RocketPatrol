@@ -9,7 +9,6 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx_select' , './assets/Hit3.wav');
         this.load.audio('sfx_explosion' , './assets/Hit2.wav');
         this.load.audio('sfx_rocket' , './assets/Hit.wav');
-
         this.load.image('title', './assets/title.png')
        
     }
@@ -17,12 +16,13 @@ class Menu extends Phaser.Scene {
     create() {
         // displays menu
         this.add.image(316, 242, 'title');
-        
 
         // defining keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
+        //highscore
+        this.highScoreDisplay = this.add.text(centerX, centerY + textSpacer*3, "High Score:" + highScore, menuconfig).setOrigin(0.5);
     }
 
     update() {
