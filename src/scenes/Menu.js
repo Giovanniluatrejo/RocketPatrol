@@ -16,7 +16,7 @@ class Menu extends Phaser.Scene {
 
     create() {
         // displays menu
-        this.add.image(50, 64, 'title');
+        this.add.image(50, 400, 'title');
         
 
         // defining keys
