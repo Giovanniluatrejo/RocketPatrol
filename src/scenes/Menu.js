@@ -22,7 +22,7 @@ class Menu extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         //highscore
-        this.highScoreDisplay = this.add.text(centerX, centerY + textSpacer*3, "High Score:" + highScore, menuconfig).setOrigin(0.5);
+        this.highScoreDisplay = this.add.text(centerX, centerY + textSpacer*3, "High Score: " + highScore, menuconfig).setOrigin(0.5);
     }
 
     update() {
