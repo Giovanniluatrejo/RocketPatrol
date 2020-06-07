@@ -24,4 +24,4 @@ game.settings = {
 // reserve keyboard vars
 let keyF, keyLEFT, keyRIGHT;
 
-let highScore = 0;
+
