@@ -28,18 +28,6 @@ class Menu extends Phaser.Scene {
        
     }
 
-    create() {
-        //background music
-        let BGM = this.sound.add('BGM');
-
-        BGM.play({
-            volume: .1,
-            loop: true
-        })
-
-        
-    }
-
     update() {
         if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             // easy mode

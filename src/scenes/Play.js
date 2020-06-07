@@ -14,8 +14,16 @@ class Play extends Phaser.Scene {
     }
 
     create() {
+    
+            //background music
+            let BGM = this.sound.add('BGM');
+    
+            BGM.play({
+                volume: .1,
+                loop: true
+            })
 
-        // places the  tile sprite
+            // places the  tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'Outdoors').setOrigin(0, 0);
 
         // shows the white rectangle borders
