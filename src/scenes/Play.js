@@ -18,9 +18,9 @@ class Play extends Phaser.Scene {
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'Outdoors').setOrigin(0, 0);
 
         // shows the white rectangle borders
-        this.add.circle(5, 5, 65, 25, 0xFFFFFF).setOrigin(0, 0);
-        this.add.circle(5, 5, 54, 15, 0xFFFFFF).setOrigin(0, 0);
-        this.add.circle(5, 50, 5, 5, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 5, 25, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 5, 15, 0xFFFFFF).setOrigin(0, 0);
+        this.add.circle(5, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
         this.add.circle(603, 5, 5, 5, 0xFFFFFF).setOrigin(0, 0);
         // puts in green UI background
        
@@ -32,7 +32,7 @@ class Play extends Phaser.Scene {
         this.ship01 = new Spaceship(this, game.config.width + 192, 132, 'spaceship', 0, 30).setOrigin(0,0);
         this.ship02 = new Spaceship(this, game.config.width + 96, 196, 'spaceship', 0, 20).setOrigin(0,0);
         this.ship03 = new Spaceship(this, game.config.width, 260, 'spaceship', 0, 10).setOrigin(0,0);
-        this.ship04 = new Spaceship(this, game.config.width, 10, 'spaceship', 0, 5).setOrigin(0,0);
+        this.ship04 = new Spaceship(this, game.config.width, 10, 'spaceship', 10, 15).setOrigin(0,0);
 
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
