@@ -82,14 +82,6 @@ class Play extends Phaser.Scene {
         
         }, null, this);
   
-   // Timer
-   scoreConfig.color = "#843605";
-   this.timer = this.add.text(game.config.width/2, 72, this.clock.getElapsedSeconds(), scoreConfig).setOrigin(0.5)
-
-  //HighScore
-  this.highScoreDisplay = this.add.text(game.config.width/2, 460, "High Score:" + highScore, scoreConfig).setOrigin(0.5)
-  
-  
     }
 
     update() {
