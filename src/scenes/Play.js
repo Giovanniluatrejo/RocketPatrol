@@ -92,6 +92,9 @@ class Play extends Phaser.Scene {
             // game over flag
         this.gameOver = false;
        
+        let currentTime = game.settings.gameTimer/1000;
+        scoreConfig.align = 'center';
+        this.timeDisplay = this.add.text(270, 54, currentTime, scoreConfig);
         let timedEvent = this.time.addEvent({ 
             delay: 1000, 
             callback: function() {
